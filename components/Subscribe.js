@@ -9,9 +9,11 @@ const Subscribe = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const { data } = useSWR('../pages/api/subscribers.js', fetcher);
+  const { data } = useSWR('/api/subscribers', fetcher);
   const subscriberCount = data?.count;
   
+  const { data: issueData } = useSWR('/api/issues', fetcher);
+  const issues = issueData?.issues;
 
   const subscribeMe = async (event) => {
     event.preventDefault();
@@ -42,16 +44,16 @@ const Subscribe = () => {
           height="500px"/>
 
         <div>
-          <div className="p-6 my-4 max-w-3xl">
+          <div className="my-4 max-w-3xl">
             <p className="text-gray-200 mb-6 text-3xl md:text-6xl font-bold tracking-tight">
               Hi, I&rsquo;m Harpriya.
             </p>
-            <p className="text-gray-200 mb-10 text-sm md:text-base">
+            <p className="text-gray-200 mb-16 text-sm md:text-base">
               As part of my 2022 resolutions, I&rsquo;ve decided to start writing an essay every two weeks. I built this website to 
               hold myself accountable to that goal, and have some fun sharing my thoughts, opinions, and learnings with my all my friends!
               You can subscribe here :)
             </p>
-            <form className="relative my-4" onSubmit={subscribeMe}>
+            <form className="relative mb-4" onSubmit={subscribeMe}>
               <div className="flex">
                 <input
                   onChange={changeEmail}
@@ -74,14 +76,27 @@ const Subscribe = () => {
               ? <span className="flex items-center text-sm font-bold text-green-600">{success}</span> 
               : <span className="flex items-center text-sm font-bold text-red-600">{error}</span>}
             <p className="text-base text-gray-200">
-              { subscriberCount } subscribers. 
+              { subscriberCount } {subscriberCount == 1 ? 'subscriber' : 'subscribers'}. {issues && issues.length} {issues && issues.length == 1 ? 'issue' : 'issues'}.
             </p>
           
           </div>
           <div>
-            <h3 className="p-6 font-bold text-3xl md:text-3xl tracking-tight mb-4 mt-8 text-gray-200">
+            <h3 className="font-bold text-3xl md:text-3xl tracking-tight my-4 mt-16 text-gray-200">
                   Published Issues
             </h3>
+            <div className="flex flex-col mb-16">
+              <ul>
+                {issues && issues
+                  .sort(
+                    (a, b) =>
+                      Number(new Date(b.publishedAt)) -
+                      Number(new Date(a.publishedAt))
+                  )
+                  .map((issue, index) => (
+                    <a key={index} href={issue.url} target="_blank" rel="noopener noreferrer" className="text-gray-400 underline"> {issue.title} </a>
+                  ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

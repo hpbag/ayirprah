@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
         <title>Harpriya writes essays</title>
         <meta
           name="Description"
-          content="Harpriya prublishes her bi-weekly essays here."
+          content="Harpriya publishes her bi-weekly essays here."
         />
       </Head>
 
