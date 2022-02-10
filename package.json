@@ -1,7 +1,7 @@
 {
-  "name": "next-starter-tailwind",
-  "version": "2.0.0",
-  "description": "Next.js starter styled with Tailwind CSS",
+  "name": "Harpriya writes essays",
+  "version": "1.0.0",
+  "description": "A simple website to showcase my wwriting",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -11,29 +11,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taylorbryant/next-starter-tailwind.git"
+    "url": "git+https://github.com/harpriyabagri/ayirprah"
   },
-  "author": "Taylor Bryant",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/taylorbryant/next-starter-tailwind/issues"
-  },
-  "homepage": "https://github.com/taylorbryant/next-starter-tailwind#readme",
   "dependencies": {
-    "next": "11.1.2",
+    "next": "12.0.10",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^1.2.1"
   },
   "devDependencies": {
-    "autoprefixer": "10.3.4",
+    "autoprefixer": "10.4.2",
     "classnames": "2.3.1",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
-    "postcss": "8.3.6",
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.10",
+    "postcss": "8.4.6",
     "postcss-100vh-fix": "1.0.2",
     "postcss-flexbugs-fixes": "5.0.2",
-    "postcss-hover-media-feature": "1.0.1",
-    "postcss-preset-env": "6.7.0",
-    "tailwindcss": "2.2.15"
+    "postcss-hover-media-feature": "1.0.2",
+    "postcss-preset-env": "7.3.1",
+    "tailwindcss": "3.0.20"
   }
 }
