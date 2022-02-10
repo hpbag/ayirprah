@@ -43,7 +43,7 @@ const Subscribe = () => {
           width="350px"
           height="500px"/>
 
-        <div>
+        <div className="px-4">
           <div className="my-4 max-w-3xl">
             <p className="text-gray-200 mb-6 text-3xl md:text-6xl font-bold tracking-tight">
               Hi, I&rsquo;m Harpriya.

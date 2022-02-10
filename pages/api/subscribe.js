@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     }
     // Send a JSON response
     res.status(201).json({
-      message: `Hey, ${email}, Please check your email and verify it. Can't wait to get you boarded.`,
+      message: `Hey, ${email}, I can't wait for you to read my next issues!`,
       error: "",
     });
   } catch (err) {
