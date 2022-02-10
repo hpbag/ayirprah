@@ -1,7 +1,7 @@
 {
-  "name": "next-starter-tailwind",
-  "version": "2.0.0",
-  "description": "Next.js starter styled with Tailwind CSS",
+  "name": "Harpriya writes essays",
+  "version": "1.0.0",
+  "description": "A simple website to showcase my wwriting",
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -11,18 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taylorbryant/next-starter-tailwind.git"
+    "url": "git+https://github.com/harpriyabagri/ayirprah"
   },
-  "author": "Taylor Bryant",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/taylorbryant/next-starter-tailwind/issues"
-  },
-  "homepage": "https://github.com/taylorbryant/next-starter-tailwind#readme",
   "dependencies": {
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "swr": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "10.3.4",

@@ -23,13 +23,6 @@ export default function AboutPage() {
           </p>
         </section>
       </div>
-
-      <Image
-        alt="A one-eyed alien holding a broken cable connected between a server and a desktop computer"
-        src="/critter.svg"
-        width={476}
-        height={297.17}
-      />
     </div>
   );
 }
