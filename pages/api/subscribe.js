@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     const API_KEY = process.env.REVUE_API_KEY;
     const response = await fetch(`https://www.getrevue.co/api/v2/subscribers`, {
       method: "POST",
-      body: JSON.stringify({ email: email, double_opt_in: false}),
+      body: JSON.stringify({ email: email, double_opt_in: true}),
       headers: {
         Authorization: `Token ${API_KEY}`,
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     }
     // Send a JSON response
     res.status(201).json({
-      message: `Hey, ${email}, I can't wait for you to read my next issues!`,
+      message: `Hey, ${email}, check your email to confirm your subscription. Can't wait to share my next essay with you!`,
       error: "",
     });
   } catch (err) {
