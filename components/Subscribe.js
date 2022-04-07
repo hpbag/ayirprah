@@ -84,8 +84,8 @@ const Subscribe = () => {
             <h3 className="font-bold text-3xl md:text-3xl tracking-tight my-4 mt-16 text-gray-200">
                   Published Issues
             </h3>
-            <div className="flex flex-col mb-16 bg-gray-900 py-4 px-4 rounded-lg">
-              <ul>
+            <div>
+              <ul className="flex flex-col">
                 {issues && issues
                   .sort(
                     (a, b) =>
@@ -93,7 +93,12 @@ const Subscribe = () => {
                       Number(new Date(a.publishedAt))
                   )
                   .map((issue, index) => (
-                    <a key={index} href={issue.url} target="_blank" rel="noopener noreferrer" className="text-gray-200 bg-gray-900"> {issue.title} </a>
+                    <a key={index} href={issue.url} target="_blank" rel="noopener noreferrer" className="">
+                      <div className="flex flex-col mb-4 rounded-lg py-2 px-4 w-max bg-gray-900">
+                        <a className="text-gray-200 ">{issue.title}</a>
+                        <a className="text-gray-400 text-xs mt-1">{new Date(issue.sent_at).toISOString().slice(0,10)}</a>
+                      </div>
+                    </a>
                   ))}
               </ul>
             </div>
