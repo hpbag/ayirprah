@@ -1,5 +1,5 @@
 export default async function handler(_, res) {
-  const API_KEY = process.env.REVUE_API_KEY;
+  const API_KEY = process.env.API_KEY;
   const response = await fetch("https://www.getrevue.co/api/v2/subscribers", {
     headers: {
       Authorization: `Token ${API_KEY}`,
